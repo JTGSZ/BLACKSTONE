@@ -10,8 +10,10 @@ TODO ANTAG QUEUE SYSTEM
 */
 SUBSYSTEM_DEF(role_class_handler)
 	name = "Role Class Handler"
-	flags = SS_NO_FIRE
+	flags = SS_KEEP_TIMING
 	init_order = INIT_ORDER_ROLE_CLASS_HANDLER
+	priority = FIRE_PRIORITY_ROLE_CLASS_HANDLER
+	runlevels = RUNLEVEL_LOBBY | RUNLEVEL_SETUP | RUNLEVEL_GAME
 
 	/*
 		This one is important, its all the open class select handlers
@@ -54,6 +56,7 @@ SUBSYSTEM_DEF(role_class_handler)
 	var/list/challenge_classes
 
 
+	var/drifter_q_worldtime_start
 /*
 	We init and build the retard azz listszz
 */
@@ -103,6 +106,18 @@ SUBSYSTEM_DEF(role_class_handler)
 	)
 
 	//Well that about covers it really.
+
+/*
+	Hey we got somethin to keep track of now, which is drifter queue
+	haha
+*/
+/datum/controller/subsystem/role_class_handler/fire(resumed = 0)
+	if(!drifter_q_worldtime_start)
+		drifter_q_worldtime_start = world.time
+
+
+/datum/controller/subsystem/role_class_handler/proc/drifter_queue_decor_time()
+	return max(0, drifter_q_worldtime_start - world.time)
 
 /*
 	We setup the class handler here, aka the menu

@@ -6,9 +6,9 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 /*
 	Once again we are back here, ha hahaha....
 */
-/datum/job/roguetown/vagrants
-	title = "Vagrant"
-	flag = DYN_VAGRANTS
+/datum/job/roguetown/drifters
+	title = "Drifter"
+	flag = WAVE_DRIFTER
 	department_flag = PEASANTS
 	faction = "Station"
 
@@ -26,13 +26,13 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 		"Argonian"
 	)
 
-	tutorial = "A traveler of unknown origin whomst has come to these lands."
+	tutorial = "A drifter drifting between lands searching for glory and work."
 
 
 	outfit = null
 	outfit_female = null
 
-	display_order = JDO_VAGRANT
+	display_order = JDO_DRIFTER
 	show_in_credits = FALSE
 	max_pq = null
 	min_pq = -999
@@ -46,7 +46,7 @@ GLOBAL_VAR_INIT(adventurer_hugbox_duration_still, 3 MINUTES)
 	combat_slot_rolls_count = 3
 	var/current_migrants = 0
 
-/datum/job/roguetown/vagrants/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/roguetown/drifters/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(L)
 		var/mob/living/carbon/human/H = L
