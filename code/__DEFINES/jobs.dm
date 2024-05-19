@@ -250,7 +250,7 @@
 #define JDO_GRENZELHOFT 33.1
 #define JDO_DESERT_RIDER 33.2
 
-#define JDO_BEGGAR 34
+#define JDO_VAGRANT 34
 #define JDO_ORPHAN 35
 
 #define JDO_GOBLINKING 36
