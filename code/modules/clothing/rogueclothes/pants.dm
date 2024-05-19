@@ -64,16 +64,16 @@
 /obj/item/clothing/under/roguetown/tights/lord
 	color = "#865c9c"
 
-/obj/item/clothing/under/roguetown/tights/beggar
+/obj/item/clothing/under/roguetown/tights/vagrant
 	r_sleeve_status = SLEEVE_TORN
 	body_parts_covered = GROIN|LEG_LEFT
 
-/obj/item/clothing/under/roguetown/tights/beggar/l
+/obj/item/clothing/under/roguetown/tights/vagrant/l
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_TORN
 	body_parts_covered = GROIN|LEG_RIGHT
 
-/obj/item/clothing/under/roguetown/tights/beggar/Initialize()
+/obj/item/clothing/under/roguetown/tights/vagrant/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
 

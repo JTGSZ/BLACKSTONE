@@ -92,16 +92,16 @@
 /obj/item/clothing/suit/roguetown/shirt/undershirt/sailor/red
 	icon_state = "sailorreds"
 
-/obj/item/clothing/suit/roguetown/shirt/undershirt/beggar
+/obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 	r_sleeve_status = SLEEVE_TORN
 	body_parts_covered = CHEST|ARM_LEFT|VITALS
 
-/obj/item/clothing/suit/roguetown/shirt/undershirt/beggar/l
+/obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
 	r_sleeve_status = SLEEVE_NORMAL
 	l_sleeve_status = SLEEVE_TORN
 	body_parts_covered = CHEST|ARM_RIGHT|VITALS
 
-/obj/item/clothing/suit/roguetown/shirt/undershirt/beggar/Initialize()
+/obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/Initialize()
 	color = pick("#6b5445", "#435436", "#704542", "#79763f")
 	..()
 

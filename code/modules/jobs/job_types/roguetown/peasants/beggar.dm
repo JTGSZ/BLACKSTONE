@@ -35,7 +35,7 @@
 	/// Maximum amount of wise beggars that can be spawned
 	var/wise_max = 3
 	/// Outfit to use when wise beggar triggers
-	var/wise_outfit = /datum/outfit/job/roguetown/beggar/wise
+	var/wise_outfit = /datum/outfit/job/roguetown/vagrant/wise
 
 /datum/job/roguetown/beggar/New()
 	. = ..()
@@ -47,7 +47,7 @@
 		return wise_outfit
 	return ..()
 
-/datum/outfit/job/roguetown/beggar/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/vagrant/pre_equip(mob/living/carbon/human/H)
 	..()
 	// wise beggar!!!
 	// guaranteed full beggar gear + random stats
@@ -58,8 +58,8 @@
 		cloak = /obj/item/clothing/cloak/raincloak/brown
 		gloves = /obj/item/clothing/gloves/roguetown/fingerless
 		armor = /obj/item/clothing/suit/roguetown/shirt/rags
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/beggar
-		pants = /obj/item/clothing/under/roguetown/tights/beggar
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
 		shoes = /obj/item/clothing/shoes/roguetown/shalal // wise boots
 		r_hand = /obj/item/rogueweapon/woodstaff/wise // dog beating staff
 		l_hand = /obj/item/rogueweapon/huntingknife/idagger/steel/special // dog butchering knife
@@ -104,12 +104,12 @@
 		armor = /obj/item/clothing/suit/roguetown/shirt/rags
 	else
 		armor = null
-		pants = /obj/item/clothing/under/roguetown/tights/beggar
+		pants = /obj/item/clothing/under/roguetown/tights/vagrant
 		if(prob(50))
-			pants = /obj/item/clothing/under/roguetown/tights/beggar/l
-		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/beggar
+			pants = /obj/item/clothing/under/roguetown/tights/vagrant/l
+		shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant
 		if(prob(50))
-			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/beggar/l
+			shirt = /obj/item/clothing/suit/roguetown/shirt/undershirt/vagrant/l
 	if(H.mind)
 		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, rand(1,5), TRUE)
 		H.mind.adjust_skillrank(/datum/skill/misc/stealing, rand(1,5), TRUE)
@@ -130,11 +130,11 @@
 	ADD_TRAIT(H, RTRAIT_NOSTINK, TRAIT_GENERIC)
 	ADD_TRAIT(H, RTRAIT_NASTY_EATER, TRAIT_GENERIC)
 
-/datum/outfit/job/roguetown/beggar
+/datum/outfit/job/roguetown/vagrant
 	name = "Beggar"
 	/// Whether or not we get wise gear and stats
 	var/is_wise = FALSE
 
-/datum/outfit/job/roguetown/beggar/wise
+/datum/outfit/job/roguetown/vagrant/wise
 	name = "Wise Beggar"
 	is_wise = TRUE
